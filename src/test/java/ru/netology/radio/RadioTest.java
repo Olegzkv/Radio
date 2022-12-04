@@ -106,6 +106,25 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSetVolumeUpperPossible() {
+        radio.setCurrentVolume(11);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void shouldSetVolumeLowerPossible() {
+        radio.setCurrentVolume(-1);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
     public void shouldReduceVolume() {
         radio.setCurrentVolume(5);
         radio.setVolumeDown();
