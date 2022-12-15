@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     Radio radio = new Radio(30);
+    Radio service = new Radio();
 
     @Test
     public void shouldSetDirectStationIfMoreThenChanels() {
@@ -81,6 +82,15 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSetMaxStation() {
+
+        int expected = 9;
+        int actual = service.getMaxStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSetNullStationIfCurrentIsMax() {
         radio.setDirectStation(radio.getMaxStation());
         radio.setNextStation();
@@ -135,4 +145,5 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 }
+
 
